@@ -1,6 +1,8 @@
 /* global cordova, module */
 
-module.exports = {
+const PLUGIN_NAME = 'ThermalPrinter'
+
+const thermalPrinterCordovaPlugin = {
   /**
    * List available printers
    *
@@ -10,7 +12,7 @@ module.exports = {
    * @param {function} errorCallback - Result on failure
    */
   listPrinters: function(data, successCallback, errorCallback) {
-    cordova.exec(successCallback, errorCallback, 'ThermalPrinter', 'listPrinters', [data]);
+    cordova.exec(successCallback, errorCallback, PLUGIN_NAME, 'listPrinters', [data]);
   },
 
   /**
@@ -29,7 +31,7 @@ module.exports = {
    * @param {function} errorCallback - Result on failure
    */
   printFormattedText: function(data, successCallback, errorCallback) {
-    cordova.exec(successCallback, errorCallback, 'ThermalPrinter', 'printFormattedText', [data]);
+    cordova.exec(successCallback, errorCallback, PLUGIN_NAME, 'printFormattedText', [data]);
   },
 
   /**
@@ -48,7 +50,7 @@ module.exports = {
    * @param {function} errorCallback - Result on failure
    */
   printFormattedTextAndCut: function(data, successCallback, errorCallback) {
-    cordova.exec(successCallback, errorCallback, 'ThermalPrinter', 'printFormattedTextAndCut', [data]);
+    cordova.exec(successCallback, errorCallback, PLUGIN_NAME, 'printFormattedTextAndCut', [data]);
   },
 
   /**
@@ -63,7 +65,7 @@ module.exports = {
    * @param {function} errorCallback - Result on failure
    */
   getEncoding: function(data, successCallback, errorCallback) {
-    cordova.exec(successCallback, errorCallback, 'ThermalPrinter', 'getEncoding', [data]);
+    cordova.exec(successCallback, errorCallback, PLUGIN_NAME, 'getEncoding', [data]);
   },
 
   /**
@@ -78,7 +80,7 @@ module.exports = {
    * @param {function} errorCallback - Result on failure
    */
   disconnectPrinter: function(data, successCallback, errorCallback) {
-    cordova.exec(successCallback, errorCallback, 'ThermalPrinter', 'disconnectPrinter', [data]);
+    cordova.exec(successCallback, errorCallback, PLUGIN_NAME, 'disconnectPrinter', [data]);
   },
 
   /**
@@ -93,7 +95,7 @@ module.exports = {
    * @param {function} errorCallback - Result on failure
    */
   requestPermissions: function(data, successCallback, errorCallback) {
-    cordova.exec(successCallback, errorCallback, 'ThermalPrinter', 'requestPermissions', [data]);
+    cordova.exec(successCallback, errorCallback, PLUGIN_NAME, 'requestPermissions', [data]);
   },
   
   
@@ -109,7 +111,7 @@ module.exports = {
    * @param {function} errorCallback - Result on failure
    */
   requestBTPermissions: function(data, successCallback, errorCallback) {
-    cordova.exec(successCallback, errorCallback, 'ThermalPrinter', 'requestBTPermissions', [data]);
+    cordova.exec(successCallback, errorCallback, PLUGIN_NAME, 'requestBTPermissions', [data]);
   },
 
   /**
@@ -125,6 +127,8 @@ module.exports = {
    * @param {function} errorCallback - Result on failure
    */
   bitmapToHexadecimalString: function(data, successCallback, errorCallback) {
-    cordova.exec(successCallback, errorCallback, 'ThermalPrinter', 'bitmapToHexadecimalString', [data]);
+    cordova.exec(successCallback, errorCallback, PLUGIN_NAME, 'bitmapToHexadecimalString', [data]);
   },
 };
+
+module.exports = thermalPrinterCordovaPlugin
